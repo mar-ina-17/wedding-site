@@ -1,0 +1,141 @@
+@import url("https://fonts.cdnfonts.com/css/cormorant-garamond");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "Sisterhood";
+  src: url("/fonts/Sisterhood-1.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --font-primary: "Cormorant Garamond", serif;
+  --font-secondary: "Sisterhood", sans-serif;
+
+  --radius: 0.625rem;
+
+  /* Base */
+  --background: white; /* soft warm white */
+  --foreground: #1e293b; /* deep slate */
+
+  --card: #ffffff;
+  --card-foreground: var(--foreground);
+
+  --popover: #ffffff;
+  --popover-foreground: var(--foreground);
+
+  /* Brand */
+  --primary: #f2c12e; /* sunflower yellow */
+  --primary-foreground: #d08426; /* text on yellow */
+
+  --secondary: #c8e6f4; /* cornflower blue */
+  --secondary-foreground: #83abd3; /* text on blue */
+
+  --accent: #dde9d5; /* light sage green */
+  --accent-foreground: #93a777; /* text on sage */
+
+  --clr-bg-1: #f2c12e;
+  --clr-bg-2: #c8e6f4;
+  --clr-bg-3: #93a777;
+
+  /* Muted / borders */
+  --muted: #eef5fb; /* very light blue-gray */
+  --muted-foreground: #475569;
+  --border: #dde9d5;
+  --input: #e5e7eb;
+  --ring: #d8f0fa;
+
+  /* Alerts */
+  --destructive: #e0813b; /* warm amber */
+  /* Charts */
+  --chart-1: #f2c12e; /* sunflower */
+  --chart-2: #88bdeb; /* cornflower */
+  --chart-3: #dde9d5; /* light green */
+  --chart-4: #ffd75e; /* lighter sunflower */
+  --chart-5: #d8f0fa; /* brighter cornflower */
+
+  /* Sidebar */
+  --sidebar: #fffdf8;
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: #eef5fb; /* soft pale blue */
+  --sidebar-accent-foreground: #1e293b;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: var(--ring);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 65px;
+  }
+  * {
+    @apply border-border outline-ring/50;
+    font-family: var(--font-primary);
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .font-primary {
+    font-family: var(--font-primary);
+  }
+  .font-secondary {
+    font-family: var(--font-secondary);
+  }
+  .bg-primary {
+    background-color: var(--clr-bg-1);
+  }
+  .bg-secondary {
+    background-color: var(--clr-bg-2);
+  }
+  .bg-accent {
+    background-color: var(--clr-bg-3);
+  }
+  .accent-primary {
+    accent-color: var(--primary);
+  }
+}
