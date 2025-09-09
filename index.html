@@ -2,13 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/icon.png" />
-    <link rel="preload" href="/images/us-1.jpg" as="image" />
+    <link rel="icon" href="/optimized/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/optimized/favicon-32.png"
+      sizes="32x32"
+    />
+
     <link
       rel="preload"
-      href="/fonts/Sisterhood-1.otf"
+      as="image"
+      href="/optimized/us-1-1280.webp"
+      imagesrcset="/optimized/us-1-640.webp 640w, /optimized/us-1-1280.webp 1280w, /optimized/us-1-1920.webp 1920w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="/fonts/Sisterhood-1.woff2"
       as="font"
-      type="font/otf"
+      type="font/woff2"
       crossorigin
     />
 
