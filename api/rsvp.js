@@ -34,8 +34,15 @@ export default async function handler(req, res) {
     const { fullName, email, attendance, phone, details, subject, botcheck } =
       body;
 
-    // Honeypot: if bots fill it, pretend success
-    if (botcheck) return res.status(200).json({ ok: true });
+    const vegRaw = body.vegetarian ?? body.isvegetarian ?? body.isVegetarian;
+    const isVeg =
+      typeof vegRaw === "string"
+        ? ["on", "true", "yes", "1"].includes(vegRaw.toLowerCase())
+        : Boolean(vegRaw);
+    const vegetarianLabel = isVeg ? "Yes" : "No";
+
+    if (botcheck)
+      return res.status(200).json({ ok: true, isvegetarian: vegetarianLabel });
 
     if (!fullName || !email || !attendance) {
       return res
@@ -43,8 +50,9 @@ export default async function handler(req, res) {
         .json({ ok: false, error: "Missing required fields" });
     }
 
+    // What goes to Web3Forms (this is the email you receive)
     const payload = {
-      access_key: process.env.WEB3FORMS_ACCESS_KEY, // stays secret on server
+      access_key: process.env.WEB3FORMS_ACCESS_KEY,
       subject: subject || "New RSVP from wedding site",
       replyto: "email",
       fullName,
@@ -52,6 +60,7 @@ export default async function handler(req, res) {
       attendance,
       phone,
       details,
+      isvegetarian: vegetarianLabel, 
     };
 
     const controller = new AbortController();
@@ -74,13 +83,12 @@ export default async function handler(req, res) {
         .json({ ok: false, error: data?.message || "Upstream error" });
     }
 
-    return res.status(200).json({ ok: true });
+
+    return res.status(200).json({ ok: true, isvegetarian: vegetarianLabel });
   } catch (e) {
-    return res
-      .status(500)
-      .json({
-        ok: false,
-        error: e?.name === "AbortError" ? "Timeout" : "Server error",
-      });
+    return res.status(500).json({
+      ok: false,
+      error: e?.name === "AbortError" ? "Timeout" : "Server error",
+    });
   }
 }
