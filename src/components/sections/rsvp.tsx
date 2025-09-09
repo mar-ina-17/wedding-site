@@ -72,18 +72,6 @@ const RSVP = () => {
           </div>
 
           <div>
-            <label className="block font-medium">
-              Имейл <span className="text-destructive">*</span>
-            </label>
-            <input
-              type="email"
-              name="email"
-              required
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-white p-2"
-            />
-          </div>
-
-          <div>
             <label className="block font-medium">Телефон</label>
             <input
               type="tel"
@@ -142,7 +130,7 @@ const RSVP = () => {
             </div>
           </div>
 
-          {/* Honeypot (bots fill it, humans won't) */}
+          {/* Honeypot */}
           <input
             type="text"
             name="botcheck"

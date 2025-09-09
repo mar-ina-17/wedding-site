@@ -1,15 +1,12 @@
 const ENDPOINT = "https://api.web3forms.com/submit";
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
+  if (req.method !== "POST")
     return res.status(405).json({ ok: false, error: "Method not allowed" });
-  }
-
-  if (!process.env.WEB3FORMS_ACCESS_KEY) {
+  if (!process.env.WEB3FORMS_ACCESS_KEY)
     return res
       .status(500)
       .json({ ok: false, error: "Missing WEB3FORMS_ACCESS_KEY" });
-  }
 
   try {
     let body = req.body;
@@ -41,27 +38,29 @@ export default async function handler(req, res) {
         : Boolean(vegRaw);
     const vegetarianLabel = isVeg ? "Yes" : "No";
 
+    // honeypot
     if (botcheck)
       return res.status(200).json({ ok: true, isvegetarian: vegetarianLabel });
 
-    if (!fullName || !email || !attendance) {
+    if (!fullName || !attendance) {
       return res
         .status(400)
         .json({ ok: false, error: "Missing required fields" });
     }
 
-    // What goes to Web3Forms (this is the email you receive)
     const payload = {
       access_key: process.env.WEB3FORMS_ACCESS_KEY,
       subject: subject || "New RSVP from wedding site",
-      replyto: "email",
       fullName,
-      email,
       attendance,
       phone,
       details,
-      isvegetarian: vegetarianLabel, 
+      isvegetarian: vegetarianLabel,
     };
+    if (email) {
+      payload.email = email;
+      payload.replyto = "email";
+    }
 
     const controller = new AbortController();
     const t = setTimeout(() => controller.abort(), 10000);
@@ -83,12 +82,13 @@ export default async function handler(req, res) {
         .json({ ok: false, error: data?.message || "Upstream error" });
     }
 
-
     return res.status(200).json({ ok: true, isvegetarian: vegetarianLabel });
   } catch (e) {
-    return res.status(500).json({
-      ok: false,
-      error: e?.name === "AbortError" ? "Timeout" : "Server error",
-    });
+    return res
+      .status(500)
+      .json({
+        ok: false,
+        error: e?.name === "AbortError" ? "Timeout" : "Server error",
+      });
   }
 }
