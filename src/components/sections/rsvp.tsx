@@ -2,7 +2,7 @@ const RSVP = () => {
   return (
     <section className="relative w-full bg-secondary" id="rsvp">
       <img
-        src="/images/decorations/sunflower3.png"
+        src="/images/decorations/sunflower3.webp"
         alt="decoration element"
         className="absolute left-1/2 -top-14 -translate-x-1/2 w-[350px] h-[180px] z-10 -scale-y-100"
       />

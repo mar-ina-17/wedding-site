@@ -1,20 +1,20 @@
 const scheduleItems = [
   {
-    icon: "/images/icons/icon1.png",
+    icon: "/images/icons/icon1.webp",
     title: "Църковен ритуал",
     hour: "15:30",
     link: "https://maps.app.goo.gl/WBGhY7CWvutVvQH67",
     text: "Храм “Св.Троица”, ж.к. Гео Милев,  ул.Манастирска 45, гр.София",
   },
   {
-    icon: "/images/icons/icon2.png",
+    icon: "/images/icons/icon2.webp",
     title: "Коктейл и изнесен ритуал",
     hour: "17:30",
     link: "https://maps.app.goo.gl/7vgpc4XUfxPWQZqG7",
     text: "Пасарел Лейк Клуб",
   },
   {
-    icon: "/images/icons/icon3.png",
+    icon: "/images/icons/icon3.webp",
     title: "Празнична вечеря",
     hour: "19:30",
     link: "https://maps.app.goo.gl/7vgpc4XUfxPWQZqG7",
@@ -26,7 +26,7 @@ const Schedule = () => {
   return (
     <section className="w-full bg-accent relative" id="schedule">
       <img
-        src="/images/decorations/sunflower2.png"
+        src="/images/decorations/sunflower2.webp"
         alt="decoration element"
         className="absolute -right-4 -top-14 w-[230px] h-[200px] -scale-y-100 "
       />

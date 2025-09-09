@@ -34,7 +34,7 @@ const faqs = [
         Няма дрескод – облечете се така, както ви е най-удобно и приятно. Ако
         все пак искате да сте в тон с нашите слънчеви цветове – ето палитрата:
         <img
-          src="/images/decorations/color-palette.png"
+          src="/images/decorations/color-palette.webp"
           alt="color palette"
           className="rounded-lg"
         />

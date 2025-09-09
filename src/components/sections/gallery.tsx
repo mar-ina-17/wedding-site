@@ -10,21 +10,21 @@ const Gallery = () => {
       <CarouselContent>
         <CarouselItem>
           <img
-            src="/images/us-1.jpg"
+            src="/images/us-1.webp"
             alt="Wedding 1"
             className="w-full h-auto rounded-lg"
           />
         </CarouselItem>
         <CarouselItem>
           <img
-            src="/images/us-2.jpg"
+            src="/images/us-2.webp"
             alt="Wedding 2"
             className="w-full h-auto rounded-lg"
           />
         </CarouselItem>
         <CarouselItem>
           <img
-            src="/images/us-3.jpg"
+            src="/images/us-3.webp"
             alt="Wedding 3"
             className="w-full h-auto rounded-lg"
           />

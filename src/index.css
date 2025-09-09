@@ -6,9 +6,11 @@
 
 @font-face {
   font-family: "Sisterhood";
-  src: url("/fonts/Sisterhood-1.otf") format("opentype");
+  src: url("/fonts/Sisterhood-1.woff2") format("woff2"),
+    url("/fonts/Sisterhood-1.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -106,6 +108,10 @@
 }
 
 @layer base {
+  html,
+  body {
+    overflow-x: hidden;
+  }
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 65px;
