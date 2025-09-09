@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 
-import palette from "../../assets/decorations/color-palette.png";
+import palette from "@/assets/decorations/color-palette.png";
 
 const faqs = [
   {

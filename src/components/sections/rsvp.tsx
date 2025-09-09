@@ -1,4 +1,4 @@
-import dec1 from "./../../assets/decorations/sunflower3.png";
+import dec1 from "@/assets/decorations/sunflower3.png";
 
 const RSVP = () => {
   return (

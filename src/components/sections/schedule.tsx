@@ -1,7 +1,7 @@
-import icon1 from "../../assets/icons/icon1.png";
-import icon2 from "../../assets/icons/icon2.png";
-import icon3 from "../../assets/icons/icon3.png";
-import dec1 from "./../../assets/decorations/sunflower2.png";
+import dec1 from "@/assets/decorations/sunflower2.png";
+import icon1 from "@/assets/icons/icon1.png";
+import icon2 from "@/assets/icons/icon2.png";
+import icon3 from "@/assets/icons/icon3.png";
 
 const scheduleItems = [
   {

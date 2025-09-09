@@ -1,3 +1,4 @@
+import dec1 from "@/assets/decorations/sunflower2.png";
 import {
   Sheet,
   SheetClose,
@@ -7,7 +8,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import dec1 from "../../assets/decorations/sunflower2.png";
 import { Button } from "../ui/button";
 
 const Header = () => {
