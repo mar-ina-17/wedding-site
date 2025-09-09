@@ -5,8 +5,6 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 
-import palette from "@/assets/decorations/color-palette.png";
-
 const faqs = [
   {
     question: "Кога и къде започва церемонията?",
@@ -35,7 +33,11 @@ const faqs = [
       <>
         Няма дрескод – облечете се така, както ви е най-удобно и приятно. Ако
         все пак искате да сте в тон с нашите слънчеви цветове – ето палитрата:
-        <img src={palette} alt="color palette" className="rounded-lg" />
+        <img
+          src="/images/decorations/color-palette.png"
+          alt="color palette"
+          className="rounded-lg"
+        />
       </>
     ),
   },

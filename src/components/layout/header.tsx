@@ -1,4 +1,3 @@
-import dec1 from "@/assets/decorations/sunflower2.png";
 import {
   Sheet,
   SheetClose,
@@ -16,7 +15,7 @@ const Header = () => {
       <div className="flex items-center py-4 px-6 overflow-visible">
         <div className="relative flex items-center overflow-visible">
           <img
-            src={dec1}
+            src="/images/decorations/sunflower2.png"
             alt="decorative image"
             aria-hidden="true"
             className="pointer-events-none select-none absolute -left-8 -top-7 sm:-left-10 sm:-top-8 w-20 sm:w-24 md:w-28

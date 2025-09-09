@@ -1,10 +1,8 @@
-import dec1 from "@/assets/decorations/sunflower3.png";
-
 const RSVP = () => {
   return (
     <section className="relative w-full bg-secondary" id="rsvp">
       <img
-        src={dec1}
+        src="/images/decorations/sunflower3.png"
         alt="decoration element"
         className="absolute left-1/2 -top-14 -translate-x-1/2 w-[350px] h-[180px] z-10 -scale-y-100"
       />

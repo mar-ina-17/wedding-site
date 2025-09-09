@@ -1,25 +1,20 @@
-import dec1 from "@/assets/decorations/sunflower2.png";
-import icon1 from "@/assets/icons/icon1.png";
-import icon2 from "@/assets/icons/icon2.png";
-import icon3 from "@/assets/icons/icon3.png";
-
 const scheduleItems = [
   {
-    icon: icon1,
+    icon: "/images/icons/icon1.png",
     title: "Църковен ритуал",
     hour: "15:30",
     link: "https://maps.app.goo.gl/WBGhY7CWvutVvQH67",
     text: "Храм “Св.Троица”, ж.к. Гео Милев,  ул.Манастирска 45, гр.София",
   },
   {
-    icon: icon2,
+    icon: "/images/icons/icon2.png",
     title: "Коктейл и изнесен ритуал",
     hour: "17:30",
     link: "https://maps.app.goo.gl/7vgpc4XUfxPWQZqG7",
     text: "Пасарел Лейк Клуб",
   },
   {
-    icon: icon3,
+    icon: "/images/icons/icon3.png",
     title: "Празнична вечеря",
     hour: "19:30",
     link: "https://maps.app.goo.gl/7vgpc4XUfxPWQZqG7",
@@ -31,7 +26,7 @@ const Schedule = () => {
   return (
     <section className="w-full bg-accent relative" id="schedule">
       <img
-        src={dec1}
+        src="/images/decorations/sunflower2.png"
         alt="decoration element"
         className="absolute -right-4 -top-14 w-[230px] h-[200px] -scale-y-100 "
       />
