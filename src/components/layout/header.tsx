@@ -7,7 +7,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 
 const Header = () => {
   return (
@@ -15,7 +15,7 @@ const Header = () => {
       <div className="flex items-center py-4 px-6 overflow-visible">
         <div className="relative flex items-center overflow-visible">
           <img
-            src="/optimized/sunflower2-512.webp"
+            src="/images/decorations/sunflower2.webp"
             alt=""
             role="presentation"
             loading="lazy"
@@ -66,27 +66,49 @@ const Header = () => {
 
               <nav className="flex flex-col gap-2 p-4">
                 <SheetClose asChild>
-                  <a href="#about">
-                    <Button variant="ghost">За нас и нашите кумове</Button>
+                  <a
+                    href="#about"
+                    className={buttonVariants({
+                      variant: "ghost",
+                      className: "w-full justify-start",
+                    })}
+                  >
+                    За нас и нашите кумове
                   </a>
                 </SheetClose>
+
                 <SheetClose asChild>
-                  <a href="#schedule">
-                    <Button variant="ghost" className="justify-start w-full">
-                      Програма
-                    </Button>
+                  <a
+                    href="#schedule"
+                    className={buttonVariants({
+                      variant: "ghost",
+                      className: "w-full justify-start",
+                    })}
+                  >
+                    Програма
                   </a>
                 </SheetClose>
+
                 <SheetClose asChild>
-                  <a href="#faq">
-                    <Button variant="ghost" className="justify-start w-full">
-                      Вашите въпроси
-                    </Button>
+                  <a
+                    href="#faq"
+                    className={buttonVariants({
+                      variant: "ghost",
+                      className: "w-full justify-start",
+                    })}
+                  >
+                    Вашите въпроси
                   </a>
                 </SheetClose>
+
                 <SheetClose asChild>
-                  <a href="#rsvp">
-                    <Button className="justify-start w-full">RSVP</Button>
+                  <a
+                    href="#rsvp"
+                    className={buttonVariants({
+                      className: "w-full justify-start",
+                    })}
+                  >
+                    RSVP
                   </a>
                 </SheetClose>
               </nav>
