@@ -1,8 +1,17 @@
+import Autoplay from "embla-carousel-autoplay";
+import { useCallback, useEffect, useState } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "../ui/carousel";
+
 const scheduleItems = [
   {
     icon: "/images/icons/icon1.webp",
     title: "Църковен ритуал",
-    hour: "15:30",
+    hour: "16:00",
     link: "https://maps.app.goo.gl/WBGhY7CWvutVvQH67",
     text: "Храм “Св.Троица”, ж.к. Гео Милев,  ул.Манастирска 45, гр.София",
   },
@@ -23,13 +32,50 @@ const scheduleItems = [
 ];
 
 const Schedule = () => {
+  const autoplayOptions = useCallback(
+    () =>
+      Autoplay({
+        delay: 3000,
+        stopOnInteraction: false,
+        stopOnMouseEnter: false,
+      }),
+    []
+  );
+
+  const [api, setApi] = useState<CarouselApi | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+
+    setSelectedIndex(api.selectedScrollSnap());
+
+    const onSelect = () => setSelectedIndex(api.selectedScrollSnap());
+    api.on("select", onSelect);
+
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
+  const imgClasses = (isActive: boolean) =>
+    [
+      "block w-[600px] h-[400px] object-cover rounded-lg",
+      "transition-all duration-500 ease-out",
+      "shadow-md",
+      isActive
+        ? "grayscale-0 opacity-100 scale-100 shadow-xl"
+        : "grayscale opacity-70 scale-95",
+    ].join(" ");
+
   return (
     <section className="w-full bg-accent relative" id="schedule">
       <img
         src="/images/decorations/sunflower2.webp"
         alt="decoration element"
-        className="absolute -right-4 -top-14 w-[230px] h-[200px] -scale-y-100 "
+        className="absolute -right-4 -top-14 w-[230px] h-[200px] -scale-y-100"
       />
+
       <div className="max-w-5xl mx-auto px-10 py-12">
         <h2 className="text-3xl font-extrabold text-white mb-4 text-center">
           Програма
@@ -67,6 +113,59 @@ const Schedule = () => {
           ))}
         </div>
       </div>
+
+      <Carousel
+        plugins={[autoplayOptions()]}
+        className="flex justify-center"
+        opts={{ loop: true }}
+        setApi={setApi}
+      >
+        <CarouselContent className="-ml-0">
+          <CarouselItem className="pl-0 basis-[600px] shrink-0 flex justify-center">
+            <img
+              src="/images/venue/venue2.jpg"
+              alt="Wedding venue 1"
+              width={600}
+              height={400}
+              className={imgClasses(selectedIndex === 0)}
+              loading="lazy"
+              decoding="async"
+            />
+          </CarouselItem>
+
+          <CarouselItem className="pl-0 basis-[600px] shrink-0 flex justify-center">
+            <img
+              src="/images/venue/venue3.jpg"
+              alt="Wedding venue 2"
+              width={600}
+              height={400}
+              className={imgClasses(selectedIndex === 1)}
+              loading="lazy"
+              decoding="async"
+            />
+          </CarouselItem>
+
+          <CarouselItem className="pl-0 basis-[600px] shrink-0 flex justify-center">
+            <img
+              src="/images/venue/venue1.jpg"
+              alt="Wedding venue 3"
+              width={600}
+              height={400}
+              className={imgClasses(selectedIndex === 2)}
+            />
+          </CarouselItem>
+
+          <CarouselItem className="pl-0 basis-[600px] shrink-0 flex justify-center">
+            <img
+              src="/images/venue/venue4.jpg"
+              alt="Wedding venue 4"
+              width={600}
+              height={400}
+              className={imgClasses(selectedIndex === 3)}
+            />
+          </CarouselItem>
+        </CarouselContent>
+      </Carousel>
     </section>
   );
 };

@@ -4,9 +4,17 @@ import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import { useCallback } from "react";
 
 const Gallery = () => {
-  const autoplayOptions = useCallback(() => Autoplay({ delay: 5000 }), []);
+  const autoplayOptions = useCallback(
+    () =>
+      Autoplay({
+        delay: 5000,
+        stopOnInteraction: false,
+        stopOnMouseEnter: false,
+      }),
+    []
+  );
   return (
-    <Carousel plugins={[autoplayOptions()]}>
+    <Carousel plugins={[autoplayOptions()]} opts={{ loop: true }}>
       <CarouselContent>
         <CarouselItem>
           <img

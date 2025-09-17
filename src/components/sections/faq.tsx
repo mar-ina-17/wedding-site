@@ -10,10 +10,10 @@ const faqs = [
     question: "Кога и къде започва церемонията?",
     answer: (
       <>
-        Церемонията ще започне на 22.05.2026г. в 15:30 в храм “Св. Троица”,
+        Церемонията ще започне на 22.05.2026г. в 16:00 в храм “Св. Троица”,
         София.{" "}
         <span className="text-destructive font-semibold">
-          Молим да бъдете там 10-15 минути по-рано
+          Молим ви да бъдете там 10-15 минути по-рано
         </span>
         , за да имате време да влезнете преди младоженците и да се настаните.
         <iframe
@@ -33,11 +33,54 @@ const faqs = [
       <>
         Няма дрескод – облечете се така, както ви е най-удобно и приятно. Ако
         все пак искате да сте в тон с нашите слънчеви цветове – ето палитрата:
-        <img
-          src="/images/decorations/color-palette.webp"
-          alt="color palette"
-          className="rounded-lg"
-        />
+        <ul
+          className="flex items-center gap-3 mt-2 "
+          role="list"
+          aria-label="Color palette"
+        >
+          <li>
+            <button
+              className="h-10 w-10 rounded-full bg-[#B8D4E7] border border-black/10 shadow-inner ring-2 ring-white transition transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#B8D4E7]"
+              aria-label="Light blue #B8D4E7"
+              title="#B8D4E7"
+            ></button>
+          </li>
+          <li>
+            <button
+              className="h-10 w-10 rounded-full bg-[#9EB5CC] border border-black/10 shadow-inner ring-2 ring-white transition transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#9EB5CC]"
+              aria-label="Blue #9EB5CC"
+              title="#9EB5CC"
+            ></button>
+          </li>
+          <li>
+            <button
+              className="h-10 w-10 rounded-full bg-[#C9D7C6] border border-black/10 shadow-inner ring-2 ring-white transition transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#C9D7C6]"
+              aria-label="Pale green #C9D7C6"
+              title="#C9D7C6"
+            ></button>
+          </li>
+          <li>
+            <button
+              className="h-10 w-10 rounded-full bg-[#8E996D] border border-black/10 shadow-inner ring-2 ring-white transition transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8E996D]"
+              aria-label="Olive green #8E996D"
+              title="#8E996D"
+            ></button>
+          </li>
+          <li>
+            <button
+              className="h-10 w-10 rounded-full bg-[#EDCD60] border border-black/10 shadow-inner ring-2 ring-white transition transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#EDCD60]"
+              aria-label="Golden yellow #EDCD60"
+              title="#EDCD60"
+            ></button>
+          </li>
+          <li>
+            <button
+              className="h-10 w-10 rounded-full bg-[#C68C44] border border-black/10 shadow-inner ring-2 ring-white transition transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#C68C44]"
+              aria-label="Warm ochre #C68C44"
+              title="#C68C44"
+            ></button>
+          </li>
+        </ul>
       </>
     ),
   },

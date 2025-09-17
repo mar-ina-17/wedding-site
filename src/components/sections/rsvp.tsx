@@ -50,7 +50,7 @@ const RSVP = () => {
         <div className="mb-6 rounded-lg border-l-4 border-destructive bg-primary/70 p-4 shadow">
           <p>
             Моля, потвърдете присъствието си до{" "}
-            <span className="font-bold text-destructive">30.04.2026 г.</span> –
+            <span className="font-bold text-destructive">05.04.2026 г.</span> –
             чрез тази форма или като се свържете с нас по предпочитания от вас
             начин.
           </p>
