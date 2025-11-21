@@ -62,7 +62,7 @@ const RSVP = () => {
         >
           <div>
             <label className="block font-medium">
-              Пълно име <span className="text-destructive">*</span>
+              Име и фамилия <span className="text-destructive">*</span>
             </label>
             <input
               name="fullName"

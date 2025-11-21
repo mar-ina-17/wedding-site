@@ -172,6 +172,7 @@
   color: #0b0b0b;
   text-align: center;
   letter-spacing: 0.1em;
+  padding: clamp(1rem, 6vw, 3rem);
 }
 
 .intro-door--dismiss {
@@ -189,6 +190,8 @@
   text-align: center;
   gap: 0.75rem;
   opacity: 0;
+  max-width: min(90vw, 520px);
+  padding: clamp(0.5rem, 3vw, 1.5rem);
 }
 
 .intro-door--loaded .intro-door__content {
@@ -217,16 +220,16 @@
 
 .intro-door__sunflower--top {
   top: 0vh;
-  left: -15vw;
+  left: clamp(-80px, -6vw, -24px);
   transform: none;
-  width: clamp(370px, 34vw, 420px);
+  width: clamp(260px, 30vw, 340px);
   z-index: 7;
 }
 
 .intro-door__sunflower--middle {
   top: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(300px, 42vw, 480px);
+  width: clamp(260px, 38vw, 420px);
   z-index: 6;
 }
 
@@ -235,7 +238,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: min(100vw, 900px);
+  width: min(90vw, 820px);
   z-index: 4;
   pointer-events: none;
 }
