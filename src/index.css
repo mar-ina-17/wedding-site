@@ -144,3 +144,157 @@
     accent-color: var(--primary);
   }
 }
+
+.intro-door {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+      circle at 20% 0%,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.7) 45%,
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.75)
+    );
+  background-size: cover, cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #0b0b0b;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.intro-door--dismiss {
+  animation: intro-overlay-slide 4s ease forwards;
+}
+
+.intro-door__content {
+  position: relative;
+  z-index: 10;
+  font-family: var(--font-secondary);
+  font-size: clamp(1.25rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  opacity: 0;
+}
+
+.intro-door--loaded .intro-door__content {
+  opacity: 1;
+}
+
+.intro-door--dismiss .intro-door__content {
+  animation: intro-text-rise 4s ease forwards;
+}
+
+.intro-door__sunflower {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 6;
+}
+
+.intro-door__sunflower img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+.intro-door__sunflower--top {
+  top: 0vh;
+  left: -15vw;
+  transform: none;
+  width: clamp(370px, 34vw, 420px);
+  z-index: 7;
+}
+
+.intro-door__sunflower--middle {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(300px, 42vw, 480px);
+  z-index: 6;
+}
+
+.intro-door__sunflower-base {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100vw, 900px);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.intro-door__sunflower-base img {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+.intro-door--loaded .intro-door__sunflower img,
+.intro-door--loaded .intro-door__sunflower-base img {
+  opacity: 1;
+}
+
+.intro-door__welcome {
+  margin: 0;
+  font-size: clamp(1.2rem, 5vw, 4rem);
+  letter-spacing: 0.1rem;
+  color: #000;
+}
+
+.intro-door__welcome_names {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  letter-spacing: 0.1rem;
+  color: #000;
+}
+.intro-door__date {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2rem);
+  letter-spacing: 0.4rem;
+  color: #000;
+}
+
+@keyframes intro-overlay-slide {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes intro-text-rise {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateY(-25%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-60%);
+    opacity: 0;
+  }
+}

@@ -1,6 +1,6 @@
 import { Content } from "./components/layout/content";
 import { Footer } from "./components/layout/footer";
-
+import { IntroDoor } from "./components/intro-door";
 import Header from "./components/layout/header";
 import About from "./components/sections/about";
 import FAQ from "./components/sections/faq";
@@ -11,6 +11,7 @@ import Schedule from "./components/sections/schedule";
 function App() {
   return (
     <>
+      <IntroDoor />
       <Header />
       <Content>
         <Gallery />
