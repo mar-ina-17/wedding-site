@@ -31,56 +31,8 @@ const faqs = [
     question: "Какво да облека?",
     answer: (
       <>
-        Няма дрескод – облечете се така, както ви е най-удобно и приятно. Ако
-        все пак искате да сте в тон с нашите слънчеви цветове – ето палитрата:
-        <ul
-          className="flex items-center gap-3 mt-2 "
-          role="list"
-          aria-label="Color palette"
-        >
-          <li>
-            <button
-              className="h-10 w-10 rounded-full bg-[#B8D4E7] border border-black/10 shadow-inner ring-2 ring-white transition transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#B8D4E7]"
-              aria-label="Light blue #B8D4E7"
-              title="#B8D4E7"
-            ></button>
-          </li>
-          <li>
-            <button
-              className="h-10 w-10 rounded-full bg-[#9EB5CC] border border-black/10 shadow-inner ring-2 ring-white transition transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#9EB5CC]"
-              aria-label="Blue #9EB5CC"
-              title="#9EB5CC"
-            ></button>
-          </li>
-          <li>
-            <button
-              className="h-10 w-10 rounded-full bg-[#C9D7C6] border border-black/10 shadow-inner ring-2 ring-white transition transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#C9D7C6]"
-              aria-label="Pale green #C9D7C6"
-              title="#C9D7C6"
-            ></button>
-          </li>
-          <li>
-            <button
-              className="h-10 w-10 rounded-full bg-[#8E996D] border border-black/10 shadow-inner ring-2 ring-white transition transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8E996D]"
-              aria-label="Olive green #8E996D"
-              title="#8E996D"
-            ></button>
-          </li>
-          <li>
-            <button
-              className="h-10 w-10 rounded-full bg-[#EDCD60] border border-black/10 shadow-inner ring-2 ring-white transition transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#EDCD60]"
-              aria-label="Golden yellow #EDCD60"
-              title="#EDCD60"
-            ></button>
-          </li>
-          <li>
-            <button
-              className="h-10 w-10 rounded-full bg-[#C68C44] border border-black/10 shadow-inner ring-2 ring-white transition transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#C68C44]"
-              aria-label="Warm ochre #C68C44"
-              title="#C68C44"
-            ></button>
-          </li>
-        </ul>
+        Няма дрескод – облечете се така, както ви е най-удобно и приятно.{" "}
+        <span className="text-yellow-500">💃🕺</span>
       </>
     ),
   },
@@ -121,9 +73,11 @@ const faqs = [
     answer: (
       <>
         Пасарел Лейк Клуб не е хотел, но разполага с 4 двойни стаи за тези от
-        вас, които биха желали да пренощуват на място. Ако искате да запазите
-        стая, моля свържете се с нас, за да проверим наличността и да ви
-        съдействаме с организацията.
+        вас, които биха желали да пренощуват на място. В близост също има
+        различни хотели и мотели. Ако искате да запазите стая в Пасарел Лейк,
+        моля свържете се с нас, за да проверим наличността и да ви съдействаме с
+        организацията. Имайте предвд, че самото място е на около 20 минути с
+        кола от София.
       </>
     ),
   },
