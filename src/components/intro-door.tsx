@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-const DISMISS_DELAY = 3000;
-const FADE_DURATION = 4000;
+const DISMISS_DELAY = 1650;
+const FADE_DURATION = 2000;
 
 export function IntroDoor() {
   const [visible, setVisible] = useState(true);

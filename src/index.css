@@ -235,7 +235,7 @@
 
 .intro-door__sunflower-base {
   position: absolute;
-  bottom: 0;
+  bottom: clamp(3rem, 5vw, 5rem);
   left: 50%;
   transform: translateX(-50%);
   width: min(90vw, 820px);
