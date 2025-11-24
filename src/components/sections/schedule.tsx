@@ -13,7 +13,9 @@ const scheduleItems = [
     title: "Църковен ритуал",
     hour: "16:00",
     link: "https://maps.app.goo.gl/WBGhY7CWvutVvQH67",
-    text: "Храм “Св.Троица”, ж.к. Гео Милев,  ул.Манастирска 45, гр.София",
+    text: "Храм “Св.Троица”, ж.к. Гео Милев,  ул.Манастирска 45, гр.София ",
+    additionalText:
+      "Молим ви да бъдете там 15-20 минути по-рано, за да имате време да се настаните.",
   },
   {
     icon: "/images/icons/icon2.webp",
@@ -108,6 +110,8 @@ const Schedule = () => {
                 >
                   {item.text}
                 </a>
+                <br />
+                <span className=" font-semibold">{item.additionalText}</span>
               </div>
             </div>
           ))}
