@@ -1,35 +1,7 @@
-import { useState } from "react";
-import { toast } from "sonner";
-
 const RSVP = () => {
-  const [sending, setSending] = useState(false);
-
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSending(true);
-    try {
-      const form = e.currentTarget;
-      const data = Object.fromEntries(new FormData(form).entries());
-
-      (data as any).subject = "New RSVP from wedding site";
-
-      const res = await fetch("/api/rsvp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      const json = await res.json().catch(() => ({} as any));
-      if (!res.ok || !json?.ok) throw new Error();
-
-      form.reset();
-      toast.success("Благодарим! Получихме вашия отговор. 💌");
-    } catch {
-      toast.error("Има грешка в момента. Моля, опитайте по-късно.");
-    } finally {
-      setSending(false);
-    }
-  };
+  const targetEmail =
+    import.meta.env.VITE_FORMSUBMIT_EMAIL || "marina.workplace@gmail.com";
+  const formAction = `https://formsubmit.co/${targetEmail}`;
 
   return (
     <section className="relative w-full bg-secondary" id="rsvp">
@@ -57,15 +29,35 @@ const RSVP = () => {
         </div>
 
         <form
-          onSubmit={onSubmit}
+          action={formAction}
+          method="POST"
           className="space-y-6 bg-secondary px-6 max-w-xl mx-auto"
         >
+          <input
+            type="hidden"
+            name="_subject"
+            value="New RSVP from wedding site"
+          />
+          <input type="hidden" name="_captcha" value="false" />
+
           <div>
             <label className="block font-medium">
               Име и фамилия <span className="text-destructive">*</span>
             </label>
             <input
-              name="fullName"
+              name="name"
+              required
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-white p-2"
+            />
+          </div>
+
+          <div>
+            <label className="block font-medium">
+              Имейл <span className="text-destructive">*</span>
+            </label>
+            <input
+              type="email"
+              name="email"
               required
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-white p-2"
             />
@@ -94,6 +86,7 @@ const RSVP = () => {
               id="vegetarian"
               name="vegetarian"
               type="checkbox"
+              value="Yes"
               className="h-4 w-4 rounded accent-primary"
             />
             <label htmlFor="vegetarian" className="ml-2">
@@ -111,7 +104,7 @@ const RSVP = () => {
                 <input
                   type="radio"
                   name="attendance"
-                  value="yes"
+                  value="Yes"
                   required
                   className="h-4 w-4 accent-primary"
                 />
@@ -121,7 +114,7 @@ const RSVP = () => {
                 <input
                   type="radio"
                   name="attendance"
-                  value="no"
+                  value="No"
                   required
                   className="h-4 w-4 accent-primary"
                 />
@@ -130,10 +123,9 @@ const RSVP = () => {
             </div>
           </div>
 
-          {/* Honeypot */}
           <input
             type="text"
-            name="botcheck"
+            name="_honey"
             tabIndex={-1}
             autoComplete="off"
             className="hidden"
@@ -141,10 +133,9 @@ const RSVP = () => {
 
           <button
             type="submit"
-            disabled={sending}
-            className="w-full rounded-md bg-primary px-4 py-2 text-white font-semibold shadow disabled:opacity-60"
+            className="w-full rounded-md bg-primary px-4 py-2 text-white font-semibold shadow"
           >
-            {sending ? "Изпращане..." : "Изпрати"}
+            Изпрати
           </button>
         </form>
       </div>
